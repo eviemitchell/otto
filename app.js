@@ -17,54 +17,54 @@ const KEY = 'otto-habits-v1';
       {id:'seed-workout',name:'train',type:'weekly',target:5,icon:'🧗🏻‍♀️',color:palettes[4],entries:{}}
     ];
     const workoutPlans = [
-      {id:'climbing-a',name:'Climbing A',kind:'climbing',exercises:[
-        {id:'repeaters',name:'Warmup repeaters',kind:'interval',sets:6,reps:10,work:7,rest:3,setRest:60,details:'Hang 7 seconds, rest 3 seconds, repeat 10 times. Rest 1 minute between sets.'},
-        {id:'density-hangs',name:'Density hangs',kind:'interval-weight',sets:4,reps:3,work:30,rest:240,setRest:240,assisted:true,details:'30-second hangs, 4-minute rest. 3 reps per set, 4-minute rest between sets.'},
-        {id:'climbing-ramp',name:'Climbing ramp',kind:'timer',sets:1,duration:1200,details:'20 minutes'},
-        {id:'projecting',name:'Projecting',kind:'timer',sets:1,duration:2400,details:'40 minutes'},
-        {id:'weighted-pullups',name:'Weighted pullups',kind:'weight-reps',sets:1,assisted:true},
-        {id:'face-pulls',name:'Face pulls',kind:'weight-reps',sets:1},
-        {id:'bicep-curls',name:'Bicep curls',kind:'weight-reps',sets:1}
+      {id:'climbing-a',name:'projecting day',kind:'climbing',exercises:[
+        {id:'wrist-curls',name:'wrist curls',kind:'timer-weight',sets:4,work:60,setRest:60,details:'1-minute working, 4 sets.'},
+        {id:'repeaters',name:'repeaters',kind:'interval',sets:6,reps:10,work:7,rest:3,setRest:60,details:'Hang 7 seconds, rest 3 seconds, repeat 10 times. Rest 1 minute between sets.'},
+        {id:'density-hangs',name:'density hangs',kind:'interval-weight',sets:4,reps:3,work:30,rest:240,setRest:240,assisted:true,details:'30-second hangs, 4-minute rest. 3 reps per set, 4-minute rest between sets.'},
+        {id:'climbing-ramp',name:'climbing ramp',kind:'timer',sets:1,duration:1200,details:'20 minutes'},
+        {id:'projecting',name:'projecting',kind:'timer',sets:1,duration:2400,details:'40 minutes'},
+        {id:'weighted-pullups',name:'pullups',kind:'weight-reps',sets:1,assisted:true},
+        {id:'face-pulls',name:'face pulls',kind:'weight-reps',sets:1},
+        {id:'bicep-curls',name:'bicep curls',kind:'weight-reps',sets:1}
       ]},
-      {id:'climbing-b',name:'Climbing B',kind:'climbing',exercises:[
-        {id:'repeaters',name:'Warmup repeaters',kind:'interval',sets:6,reps:10,work:7,rest:3,setRest:60,details:'Hang 7 seconds, rest 3 seconds, repeat 10 times. Rest 1 minute between sets.'},
-        {id:'boulder-pyramid',name:'Boulder pyramid on the minute',kind:'timer',sets:1,duration:1800,details:'30 minutes'},
-        {id:'max-hangs',name:'Max hangs',kind:'interval-weight',sets:1,reps:6,work:10,rest:120,setRest:0,details:'10-second hangs, 2-minute rest. 6 reps.'},
-        {id:'rdls',name:'RDLs',kind:'weight-reps',sets:5,reps:5,details:'5 sets of 5'},
-        {id:'hanging-leg-raise',name:'Hanging leg raise',kind:'weight-reps',sets:3,reps:10,details:'3 sets of 10 reps'}
+      {id:'climbing-b',name:'volume day',kind:'climbing',exercises:[
+        {id:'wrist-curls',name:'wrist curls',kind:'timer-weight',sets:4,work:60,setRest:60,details:'1-minute working, 4 sets.'},
+        {id:'repeaters',name:'repeaters',kind:'interval',sets:6,reps:10,work:7,rest:3,setRest:60,details:'Hang 7 seconds, rest 3 seconds, repeat 10 times. Rest 1 minute between sets.'},
+        {id:'boulder-pyramid',name:'boulder pyramid on the minute',kind:'timer',sets:1,duration:1800,details:'30 minutes'},
+        {id:'max-hangs',name:'max hangs',kind:'interval-weight',sets:1,reps:6,work:10,rest:120,setRest:0,details:'10-second hangs, 2-minute rest. 6 reps.'},
+        {id:'rdls',name:'romanian deadlift',kind:'weight-reps',sets:5,reps:5,details:'5 sets of 5'},
+        {id:'cable-crunch',name:'cable crunch',kind:'weight-reps',sets:3,reps:10,details:'3 sets of 10 reps'}
       ]},
-      {id:'climbing-c',name:'Climbing C',kind:'climbing',exercises:[
-        {id:'repeaters',name:'Warmup repeaters',kind:'interval',sets:6,reps:10,work:7,rest:3,setRest:60,details:'Hang 7 seconds, rest 3 seconds, repeat 10 times. Rest 1 minute between sets.'},
-        {id:'density-hangs',name:'Density hangs',kind:'interval-weight',sets:4,reps:3,work:30,rest:240,setRest:240,assisted:true,details:'30-second hangs, 4-minute rest. 3 reps per set, 4-minute rest between sets.'},
-        {id:'boulder-triples',name:'Boulder triples',kind:'reps',sets:3,reps:3,details:'Climb the same boulder 3 times with 1-minute rest. Rest 3 minutes between sets.'},
-        {id:'bench',name:'Bench',kind:'weight-reps',sets:1},
-        {id:'tricep-dips',name:'Tricep dips',kind:'weight-reps',sets:1,assisted:true},
-        {id:'lat-raise',name:'Lat raise',kind:'weight-reps',sets:1}
+      {id:'climbing-c',name:'techy day',kind:'climbing',exercises:[
+        {id:'wrist-curls',name:'wrist curls',kind:'timer-weight',sets:4,work:60,setRest:60,details:'1-minute working, 4 sets.'},
+        {id:'repeaters',name:'repeaters',kind:'interval',sets:6,reps:10,work:7,rest:3,setRest:60,details:'Hang 7 seconds, rest 3 seconds, repeat 10 times. Rest 1 minute between sets.'},
+        {id:'density-hangs',name:'density hangs',kind:'interval-weight',sets:4,reps:3,work:30,rest:240,setRest:240,assisted:true,details:'30-second hangs, 4-minute rest. 3 reps per set, 4-minute rest between sets.'},
+        {id:'boulder-triples',name:'boulder triples',kind:'reps',sets:3,reps:3,details:'Climb the same boulder 3 times with 1-minute rest. Rest 3 minutes between sets.'},
+        {id:'bench',name:'bench',kind:'weight-reps',sets:1},
+        {id:'tricep-dips',name:'tricep dips',kind:'weight-reps',sets:1,assisted:true},
+        {id:'lat-raise',name:'lat raise',kind:'weight-reps',sets:1},
+        {id:'cable-crunch',name:'cable crunch',kind:'weight-reps',sets:3,reps:10,details:'3 sets of 10 reps'}
       ]},
-      {id:'home-a',name:'Home A',kind:'home',exercises:[
-        {id:'density-hangs',name:'Density hangs',kind:'interval-weight',sets:4,reps:3,work:30,rest:240,setRest:240,assisted:true,details:'30-second hangs, 4-minute rest. 3 reps per set, 4-minute rest between sets.'},
-        {id:'wrist-curls',name:'Wrist curls',kind:'timer-weight',sets:4,reps:1,work:60,details:'1-minute holds, 4 sets.'},
-        {id:'dumbbell-row',name:'Dumbbell row',kind:'weight-reps',sets:1},
-        {id:'scapular-pushups',name:'Scapular pushups',kind:'weight-reps',sets:1},
-        {id:'pistol-squats',name:'Pistol squats',kind:'weight-reps',sets:1},
-        {id:'plank',name:'Plank',kind:'timer',sets:3,duration:60,details:'1 minute, 3 reps.'},
-        {id:'crunches',name:'Crunches',kind:'weight-reps',sets:1}
+      {id:'home-a',name:'home a',kind:'home',exercises:[
+        {id:'density-hangs',name:'density hangs',kind:'interval-weight',sets:4,reps:3,work:30,rest:240,setRest:240,assisted:true,details:'30-second hangs, 4-minute rest. 3 reps per set, 4-minute rest between sets.'},
+        {id:'wrist-curls',name:'wrist curls',kind:'timer-weight',sets:4,work:60,setRest:60,details:'1-minute working, 4 sets.'},
+        {id:'dumbbell-row',name:'dumbbell row',kind:'weight-reps',sets:1},
+        {id:'scapular-pushups',name:'scapular pushups',kind:'weight-reps',sets:1},
+        {id:'pistol-squats',name:'pistol squats',kind:'weight-reps',sets:1},
+        {id:'cable-crunch',name:'cable crunch',kind:'weight-reps',sets:3,reps:10,details:'3 sets of 10 reps'},
+        {id:'plank',name:'plank',kind:'timer',sets:3,duration:60,details:'1 minute, 3 reps.'}
       ]},
-      {id:'home-b',name:'Home B',kind:'home',exercises:[
-        {id:'density-hangs',name:'Density hangs',kind:'interval-weight',sets:4,reps:3,work:30,rest:240,setRest:240,assisted:true,details:'30-second hangs, 4-minute rest. 3 reps per set, 4-minute rest between sets.'},
-        {id:'wrist-curls',name:'Wrist curls',kind:'timer-weight',sets:4,reps:1,work:60,details:'1-minute holds, 4 sets.'},
-        {id:'lat-pulldowns',name:'Lat pulldowns',kind:'weight-reps',sets:1},
-        {id:'chest-supported-row',name:'Chest supported row',kind:'weight-reps',sets:1},
-        {id:'tricep-pushdown',name:'Tricep pushdown',kind:'weight-reps',sets:1},
-        {id:'cable-crunch',name:'Cable crunch',kind:'weight-reps',sets:1}
+      {id:'home-b',name:'home b',kind:'home',exercises:[
+        {id:'density-hangs',name:'density hangs',kind:'interval-weight',sets:4,reps:3,work:30,rest:240,setRest:240,assisted:true,details:'30-second hangs, 4-minute rest. 3 reps per set, 4-minute rest between sets.'},
+        {id:'wrist-curls',name:'wrist curls',kind:'timer-weight',sets:4,work:60,setRest:60,details:'1-minute working, 4 sets.'},
+        {id:'lat-pulldowns',name:'lat pulldowns',kind:'weight-reps',sets:1},
+        {id:'chest-supported-row',name:'chest-supported row',kind:'weight-reps',sets:1},
+        {id:'tricep-pushdown',name:'tricep pushdown',kind:'weight-reps',sets:1},
+        {id:'cable-crunch',name:'cable crunch',kind:'weight-reps',sets:3,reps:10,details:'3 sets of 10 reps'},
+        {id:'deadbug',name:'deadbug',kind:'timer',sets:3,duration:60,details:'1 minute, 3 reps.'}
       ]},
       {id:'abrahangs',name:'abrahangs',kind:'daily',daily:true,habitId:'seed-abrahangs',exercises:[
-        {id:'half-crimp',name:'Half crimp',kind:'interval',sets:1,reps:6,work:10,rest:20,details:'10 seconds on, 20 seconds rest.'},
-        {id:'open-three',name:'Open three',kind:'interval',sets:1,reps:6,work:10,rest:20,details:'10 seconds on, 20 seconds rest.'},
-        {id:'half-crimp-front-two',name:'Half crimp front two',kind:'interval',sets:1,reps:2,work:10,rest:20,details:'10 seconds on, 20 seconds rest.'},
-        {id:'half-crimp-middle-two',name:'Half crimp middle two',kind:'interval',sets:1,reps:2,work:10,rest:20,details:'10 seconds on, 20 seconds rest.'},
-        {id:'open-front-two',name:'Open front two',kind:'interval',sets:1,reps:2,work:10,rest:20,details:'10 seconds on, 20 seconds rest.'},
-        {id:'open-middle-two',name:'Open middle two',kind:'interval',sets:1,reps:2,work:10,rest:20,details:'10 seconds on, 20 seconds rest.'}
+        {id:'half-crimp',name:'half crimp',kind:'interval',sets:1,reps:20,work:10,rest:20,details:'Half crimp x6, open three x6, half crimp front two x2, half crimp middle two x2, open front two x2, open middle two x2.'}
       ]}
     ];
     let habits = loadHabits();
@@ -73,7 +73,7 @@ const KEY = 'otto-habits-v1';
     const $ = s => document.querySelector(s);
     const dateKey = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
     const today = new Date(); today.setHours(12,0,0,0);
-    let workoutData=loadWorkoutData(),selectedWorkoutDate=new Date(today),activeRoutineId=null,activeExerciseTimer=null,restTimerEndsAt=0,workoutTimerInterval=null,setContextTarget=null,setTouchGesture=null,renameTarget=null,renamePress=null,renamePressTimer=0,suppressRoutineOpenUntil=0;
+    let workoutData=loadWorkoutData(),selectedWorkoutDate=new Date(today),activeRoutineId=null,activeExerciseTimer=null,workoutTimerInterval=null,setContextTarget=null,setTouchGesture=null,renameTarget=null,renamePress=null,renamePressTimer=0,suppressRoutineOpenUntil=0;
     function loadHabits(){
       try {
         const saved=JSON.parse(localStorage.getItem(KEY) ?? localStorage.getItem(OLD_KEY));
@@ -120,8 +120,8 @@ const KEY = 'otto-habits-v1';
     function getWorkoutSession(routine,date=selectedWorkoutDate){const key=sessionKey(date,routine.id);let session=workoutData.sessions[key];if(!session)session=workoutData.sessions[key]={startedAt:null,finishedAt:null,exerciseSets:{}};session.exerciseSets||={};for(const exercise of allRoutineExercises(routine)){if(!Array.isArray(session.exerciseSets[exercise.id]))session.exerciseSets[exercise.id]=Array.from({length:Math.max(1,exercise.sets||1)},()=>({done:false,weight:'',reps:exercise.reps||'',seconds:exercise.duration||exercise.work||''}));}return session;}
     function previousExerciseWeight(exerciseId,date=selectedWorkoutDate){const beforeDate=dateKey(date);let latestDate='',latestWeight='';for(const [key,session] of Object.entries(workoutData.sessions)){const sessionDate=key.split('|',1)[0];if(sessionDate>=beforeDate||sessionDate<latestDate)continue;const sets=session.exerciseSets?.[exerciseId];if(!Array.isArray(sets))continue;for(let index=sets.length-1;index>=0;index--){const weight=sets[index]?.weight;if(weight!==''&&weight!=null&&Number.isFinite(Number(weight))){latestDate=sessionDate;latestWeight=String(weight);break;}}}return latestWeight;}
     function workoutWeekKey(date=selectedWorkoutDate){return dateKey(weekStart(date));}
-    function recentRoutineCompletionDate(routine){const todayKey=dateKey(today),cutoff=new Date(today);cutoff.setDate(cutoff.getDate()-6);const completionId=routine.daily?`${routine.id}:${todayKey}`:routine.id;let latest='';for(const bucket of Object.values(workoutData.completions)){const date=bucket?.[completionId];if(typeof date!=='string')continue;if(routine.daily?date===todayKey:date>=dateKey(cutoff)&&date<=todayKey){if(date>latest)latest=date;}}return latest||null;}
-    function toggleRoutineCompletion(routineId){const routine=workoutPlans.find(item=>item.id===routineId);if(!routine)return;const completedDate=recentRoutineCompletionDate(routine);setWorkoutCompletion(routineId,!completedDate,completedDate?new Date(`${completedDate}T12:00:00`):selectedWorkoutDate);}
+    function selectedRoutineCompletionDate(routine,date=selectedWorkoutDate){const week=workoutData.completions[workoutWeekKey(date)]||{},completionId=routine.daily?`${routine.id}:${dateKey(date)}`:routine.id,completedDate=week[completionId];return typeof completedDate==='string'?completedDate:null;}
+    function toggleRoutineCompletion(routineId){const routine=workoutPlans.find(item=>item.id===routineId);if(!routine)return;const completedDate=selectedRoutineCompletionDate(routine);setWorkoutCompletion(routineId,!completedDate,selectedWorkoutDate);}
     function setWorkoutCompletion(routineId,done,date=selectedWorkoutDate){const routine=workoutPlans.find(item=>item.id===routineId);if(!routine)return;const key=workoutWeekKey(date),completionId=routine.daily?`${routine.id}:${dateKey(date)}`:routine.id;workoutData.completions[key]||={};if(done){workoutData.completions[key][completionId]=dateKey(date);const habitIds=new Set(['seed-workout',routine.habitId].filter(Boolean));for(const id of habitIds){const habit=habits.find(item=>item.id===id);if(!habit)continue;habit.entries||={};const day=dateKey(date);habit.entries[day]=Math.max(1,Number(habit.entries[day])||0);}persist();selectedDate=new Date(date);selectedDate.setHours(12,0,0,0);render();}else delete workoutData.completions[key][completionId];persistWorkouts();}
     function exportBackup(){
       const backup={app:'otto',formatVersion:2,exportedAt:new Date().toISOString(),theme:document.documentElement.dataset.theme||'dark',habits,archivedHabits:JSON.parse(localStorage.getItem('otto-archived-habits-v1')||'[]'),workouts:workoutData};
@@ -234,15 +234,15 @@ const KEY = 'otto-habits-v1';
       $('#workoutPrevWeek').disabled=false;$('#workoutNextWeek').disabled=weekStart(selectedWorkoutDate)>=weekStart(today);
     }
     function renderRoutineList(){
-      const list=$('#routineList'),ordered=[...workoutPlans].sort((a,b)=>Number(Boolean(recentRoutineCompletionDate(a)))-Number(Boolean(recentRoutineCompletionDate(b))));list.innerHTML=ordered.map(routine=>{
-        const date=recentRoutineCompletionDate(routine),done=Boolean(date),label=done?`Done ${dateLabel(new Date(`${date}T12:00:00`),{month:'short',day:'numeric'})}`:`${routine.daily?'Daily · ':''}${allRoutineExercises(routine).length} exercises`;
+      const list=$('#routineList'),ordered=[...workoutPlans].sort((a,b)=>Number(Boolean(selectedRoutineCompletionDate(a)))-Number(Boolean(selectedRoutineCompletionDate(b))));list.innerHTML=ordered.map(routine=>{
+        const date=selectedRoutineCompletionDate(routine),done=Boolean(date),label=done?`Done ${dateLabel(new Date(`${date}T12:00:00`),{month:'short',day:'numeric'})}`:`${routine.daily?'Daily · ':''}${allRoutineExercises(routine).length} exercises`;
         const routineName=displayRoutineName(routine);
         return `<article class="workout-card ${done?'recently-done':'needs-work'}"><button class="workout-card-open" type="button" data-open-routine="${safe(routine.id)}" aria-label="Open ${safe(routineName)} workout"><div class="workout-card-copy"><h2 data-rename-routine="${safe(routine.id)}" title="Right-click or press and hold to rename">${safe(routineName)}</h2><p>${safe(label)}</p></div></button><button class="workout-quick" type="button" data-quick-routine="${safe(routine.id)}" aria-label="${done?'Undo':'Quick complete'} ${safe(routineName)}" aria-pressed="${done}">${checkIcon()}</button></article>`;
       }).join('');
     }
     function renderWorkouts(){renderWorkoutCalendar();renderRoutineList();}
     function setRowsFor(exercise,session){return session.exerciseSets[exercise.id]||[];}
-    function openWorkoutMode(routineId){const routine=workoutPlans.find(item=>item.id===routineId);if(!routine)return;activeRoutineId=routineId;const session=getWorkoutSession(routine);session.startedAt||=new Date().toISOString();persistWorkouts();$('#workoutBrowse').hidden=true;$('#workoutMode').hidden=false;$('#restTimerFab').hidden=false;renderWorkoutMode();}
+    function openWorkoutMode(routineId){const routine=workoutPlans.find(item=>item.id===routineId);if(!routine)return;activeRoutineId=routineId;const session=getWorkoutSession(routine);session.startedAt||=new Date().toISOString();persistWorkouts();$('#workoutBrowse').hidden=true;$('#workoutMode').hidden=false;renderWorkoutMode();}
     function renderWorkoutMode(){
       const routine=workoutPlans.find(item=>item.id===activeRoutineId);if(!routine)return;const session=getWorkoutSession(routine),exercises=allRoutineExercises(routine);
       $('#activeWorkoutTitle').textContent=displayRoutineName(routine);$('#activeWorkoutTitle').dataset.renameRoutine=routine.id;$('#activeWorkoutTitle').title='Right-click or press and hold to rename';
@@ -259,13 +259,17 @@ const KEY = 'otto-habits-v1';
           const deleteAction=`<button class="swipe-delete-action" type="button" data-delete-set="${safe(exercise.id)}" data-set-index="${index}" aria-label="Delete ${safe(exerciseName)} set ${index+1}">Delete</button>`;
           const repsInput=hasReps?`<input type="number" step="1" min="0" data-set-field="reps" data-exercise="${safe(exercise.id)}" data-set-index="${index}" value="${safe(record.reps??'')}" placeholder="reps" aria-label="${safe(exerciseName)} set ${index+1} reps">`:'<span class="set-spacer"></span>';
           const timerActive=activeExerciseTimer?.routineId===activeRoutineId&&activeExerciseTimer.date===dateKey(selectedWorkoutDate)&&activeExerciseTimer.exerciseId===exercise.id&&activeExerciseTimer.setIndex===index;
-          const timerLabel=exercise.kind==='timer'?formatClock(record.seconds||exercise.duration):`${exercise.reps} × ${formatClock(exercise.work)}`;
-          const timerHtml=isTimer?`<div class="timer-control"><span class="timer-readout" data-timer-readout="${safe(exercise.id)}:${index}">${timerLabel}</span><button class="set-timer ${timerActive?'set-timer-restart':''}" type="button" data-start-timer="${safe(exercise.id)}" data-set-index="${index}" aria-label="${timerActive?'Restart':'Start'} ${safe(exerciseName)} timer" ${record.done?'disabled':''}>${timerActive?'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5"/><path d="M19.2 12A7.5 7.5 0 1 1 17 6.7L20 12"/></svg>':record.done?'Done':'Start'}</button></div>`:'';
+          const timerLabel=exercise.kind==='timer'?formatClock(record.seconds||exercise.duration):`${Number(exercise.reps)||1} × ${formatClock(exercise.work)}`;
+          const timerButton=isTimer?'':`<button class="set-timer ${timerActive?'set-timer-restart':''}" type="button" data-start-timer="${safe(exercise.id)}" data-set-index="${index}" aria-label="${timerActive?'Restart':'Start'} ${safe(exerciseName)} timer" ${record.done?'disabled':''}>${timerActive?'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5"/><path d="M19.2 12A7.5 7.5 0 1 1 17 6.7L20 12"/></svg>':record.done?'Done':'Start'}</button>`;
+          const timerHtml=isTimer?`<div class="timer-control"><span class="timer-readout" data-timer-readout="${safe(exercise.id)}:${index}">${timerLabel}</span>${timerButton}</div>`:'';
           const repCounter=hasRepCounter?`<span class="rep-counter" data-rep-counter="${safe(exercise.id)}:${index}">${record.done?exercise.reps:0}/${exercise.reps}</span>`:'';
           const fields=[...(hasWeight?[weightInput]:[]),...(isTimer?[timerHtml]:hasReps?[repsInput]:[]),...(hasRepCounter?[repCounter]:[])].join('');
           return `<div class="set-row ${gridClass} ${isTimer?'timer-set':''} ${record.done?'is-done':''}" data-set-row="${safe(exercise.id)}" data-set-index="${index}" tabindex="-1" aria-label="${safe(exerciseName)} set ${index+1}">${deleteAction}<span class="set-number">${index+1}</span>${fields}${check}</div>`;
         }).join('');
-        return `<article class="exercise-card" data-exercise-card="${safe(exercise.id)}"><div class="exercise-top"><div><h2 class="exercise-title" data-rename-exercise="${safe(exercise.id)}" title="Right-click or press and hold to rename">${safe(exerciseName)}</h2>${detail?`<p class="exercise-detail">${safe(detail)}</p>`:''}</div></div><div class="set-head ${gridClass}">${headings}</div>${rows}<button class="add-set-btn" type="button" data-add-set="${safe(exercise.id)}">＋ Add set</button></article>`;
+        const exerciseTimerActive=activeExerciseTimer?.routineId===activeRoutineId&&activeExerciseTimer.date===dateKey(selectedWorkoutDate)&&activeExerciseTimer.exerciseId===exercise.id;
+        const allSetsDone=records.length>0&&records.every(record=>record.done);
+        const exerciseTimerButton=isTimer?`<button class="exercise-timer-start ${exerciseTimerActive?'is-running':''}" type="button" data-start-exercise-timer="${safe(exercise.id)}" aria-label="${exerciseTimerActive?`Restart ${exerciseName} set ${activeExerciseTimer.setIndex+1}`:`Start ${exerciseName}`}" ${allSetsDone&&!exerciseTimerActive?'disabled':''}>${exerciseTimerActive?'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5"/><path d="M19.2 12A7.5 7.5 0 1 1 17 6.7L20 12"/></svg>':allSetsDone?'Done':'Start'}</button>`:'';
+        return `<article class="exercise-card" data-exercise-card="${safe(exercise.id)}"><div class="exercise-top"><div><h2 class="exercise-title" data-rename-exercise="${safe(exercise.id)}" title="Right-click or press and hold to rename">${safe(exerciseName)}</h2>${detail?`<p class="exercise-detail">${safe(detail)}</p>`:''}</div>${exerciseTimerButton}</div><div class="set-head ${gridClass}">${headings}</div>${rows}<button class="add-set-btn" type="button" data-add-set="${safe(exercise.id)}">＋ Add set</button></article>`;
       }).join('');
     }
     function openRenameDialog(target){if($('#renameExerciseDialog').open)return;const routine=workoutPlans.find(item=>item.id===target.routineId);if(!routine)return;renameTarget=target;const isRoutine=target.kind==='routine',exercise=!isRoutine&&allRoutineExercises(routine).find(item=>item.id===target.exerciseId);if(!isRoutine&&!exercise){renameTarget=null;return;}$('#renameDialogTitle').textContent=isRoutine?'Rename routine':'Rename exercise';$('#renameDialogDescription').textContent=isRoutine?'Update the name shown for this routine.':'Update the name in this routine.';$('#renameDialogLabel').textContent=isRoutine?'Routine name':'Exercise name';$('#renameExerciseName').value=isRoutine?displayRoutineName(routine):displayExerciseName(routine,exercise);$('#renameExerciseDialog').showModal();$('#renameExerciseName').focus();$('#renameExerciseName').select();}
@@ -299,21 +303,38 @@ const KEY = 'otto-habits-v1';
     function setComplete(exerciseId,setIndex){
       const routine=workoutPlans.find(item=>item.id===activeRoutineId);if(!routine)return;const session=getWorkoutSession(routine),record=session.exerciseSets[exerciseId]?.[setIndex];if(!record)return;record.done=!record.done;if(activeExerciseTimer?.routineId===routine.id&&activeExerciseTimer.date===dateKey(selectedWorkoutDate)&&activeExerciseTimer.exerciseId===exerciseId&&activeExerciseTimer.setIndex===setIndex)activeExerciseTimer=null;persistWorkouts();renderWorkoutMode();renderActiveTimerFab();
     }
-    function renderActiveTimerFab(){const fab=$('#activeTimerFab');if(!activeExerciseTimer){fab.hidden=true;return;}const timer=activeExerciseTimer,routine=workoutPlans.find(item=>item.id===timer.routineId),exercise=routine&&allRoutineExercises(routine).find(item=>item.id===timer.exerciseId);if(!exercise){fab.hidden=true;return;}const remaining=Math.max(0,(timer.endsAt-Date.now())/1000),name=displayExerciseName(routine,exercise);$('#activeTimerFabLabel').textContent=formatClock(remaining);fab.setAttribute('aria-label',`Return to ${name}, set ${timer.setIndex+1}, ${formatClock(remaining)} remaining`);fab.title=`${name} · set ${timer.setIndex+1}`;fab.hidden=false;}
+    function renderActiveTimerFab(){
+      const widget=$('#activeTimerWidget'),fab=$('#activeTimerFab'),timer=activeExerciseTimer,workoutOpen=Boolean(activeRoutineId&&!$('#workoutsPage').hidden&&!$('#workoutMode').hidden);
+      if(!workoutOpen||!timer){widget.hidden=true;return;}
+      const routine=workoutPlans.find(item=>item.id===timer.routineId),exercise=routine&&allRoutineExercises(routine).find(item=>item.id===timer.exerciseId);
+      if(!exercise){widget.hidden=true;return;}
+      const remaining=Math.max(0,(timer.paused?timer.pausedRemainingMs:timer.endsAt-Date.now())/1000),name=displayExerciseName(routine,exercise),repTotal=Number(exercise.reps)||1,isPaused=Boolean(timer.paused),phaseLabel=['rest','set-rest'].includes(timer.phase)?'rest':['interval','interval-weight','timer-weight'].includes(exercise.kind)?`rep ${Math.min(timer.round+1,repTotal)}/${repTotal}`:'timer';
+      $('#activeTimerFabLabel').textContent=formatClock(remaining);$('#activeTimerFabPhase').textContent=phaseLabel;
+      widget.classList.toggle('timer-phase-rest',!isPaused&&phaseLabel==='rest');widget.classList.toggle('timer-phase-work',!isPaused&&phaseLabel!=='rest');widget.classList.toggle('timer-phase-paused',isPaused);
+      fab.setAttribute('aria-label',`${formatClock(remaining)}, ${phaseLabel}, ${name}, set ${timer.setIndex+1}. Tap to return to timer`);fab.title=`${name} · set ${timer.setIndex+1}`;
+      const pause=$('#activeTimerPause'),close=$('#activeTimerClose');pause.innerHTML=isPaused?'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>':'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg>';pause.setAttribute('aria-label',isPaused?'Resume timer':'Pause timer');pause.title=isPaused?'Resume timer':'Pause timer';close.hidden=!isPaused;widget.hidden=false;
+    }
     function focusRunningSet(){const timer=activeExerciseTimer;if(!timer)return;selectedWorkoutDate=new Date(`${timer.date}T12:00:00`);showView('workouts');if(activeRoutineId!==timer.routineId||$('#workoutMode').hidden)openWorkoutMode(timer.routineId);else renderWorkoutMode();requestAnimationFrame(()=>{const row=document.querySelector(`[data-set-row="${CSS.escape(timer.exerciseId)}"][data-set-index="${timer.setIndex}"]`);if(!row)return;const rect=row.getBoundingClientRect(),toolbarTop=$('#bottomToolbar').getBoundingClientRect().top,visibleBottom=Math.min(window.innerHeight,toolbarTop-12);if(rect.top<0||rect.bottom>visibleBottom)row.scrollIntoView({behavior:'smooth',block:'center'});row.focus({preventScroll:true});});}
+    function nextTimerSet(exercise,session,currentIndex){return session.exerciseSets[exercise.id].findIndex((set,index)=>index>currentIndex&&!set.done);}
+    function startTimedSet(timer,exercise,session,setIndex){const record=session.exerciseSets[exercise.id][setIndex];timer.setIndex=setIndex;timer.phase='work';timer.round=0;timer.endsAt=Date.now()+((exercise.kind==='timer'?Number(record.seconds)||exercise.duration:exercise.work)||1)*1000;}
+    function finishTimedSet(timer,routine,exercise,session,record){record.done=true;const nextIndex=nextTimerSet(exercise,session,timer.setIndex);if(nextIndex>=0){const restSeconds=exercise.setRest==null?60:Number(exercise.setRest);if(restSeconds>0){timer.phase='set-rest';timer.endsAt=Date.now()+restSeconds*1000;}else startTimedSet(timer,exercise,session,nextIndex);}else activeExerciseTimer=null;persistWorkouts();if(activeRoutineId===routine.id)renderWorkoutMode();}
+    function nextTimerSet(exercise,session,currentIndex){return session.exerciseSets[exercise.id].findIndex((set,index)=>index>currentIndex&&!set.done);}
+    function startTimedSet(timer,exercise,session,setIndex){const record=session.exerciseSets[exercise.id][setIndex];timer.setIndex=setIndex;timer.phase='work';timer.round=0;timer.paused=false;timer.endsAt=Date.now()+((exercise.kind==='timer'?Number(record.seconds)||exercise.duration:exercise.work)||1)*1000;}
+    function finishTimedSet(timer,routine,exercise,session,record){record.done=true;const nextIndex=nextTimerSet(exercise,session,timer.setIndex);if(nextIndex>=0){const restSeconds=exercise.setRest==null?60:Number(exercise.setRest);if(restSeconds>0){timer.phase='set-rest';timer.endsAt=Date.now()+restSeconds*1000;}else startTimedSet(timer,exercise,session,nextIndex);}else activeExerciseTimer=null;persistWorkouts();if(activeRoutineId===routine.id)renderWorkoutMode();}
+    function toggleExerciseTimerPause(){const timer=activeExerciseTimer;if(!timer)return;if(timer.paused){timer.endsAt=Date.now()+timer.pausedRemainingMs;delete timer.pausedRemainingMs;timer.paused=false;}else{timer.pausedRemainingMs=Math.max(0,timer.endsAt-Date.now());timer.paused=true;}tickWorkoutTimers();}
+    function discardCurrentTimedExercise(){const timer=activeExerciseTimer;if(!timer?.paused)return;const routine=workoutPlans.find(item=>item.id===timer.routineId),exercise=routine&&allRoutineExercises(routine).find(item=>item.id===timer.exerciseId);if(!routine||!exercise)return;const session=getWorkoutSession(routine,new Date(`${timer.date}T12:00:00`)),records=session.exerciseSets[exercise.id]||[];for(const record of records){record.done=false;record.weight='';record.reps=exercise.reps||'';record.seconds=exercise.duration||exercise.work||'';}activeExerciseTimer=null;persistWorkouts();if(activeRoutineId===routine.id)renderWorkoutMode();tickWorkoutTimers();}
     function tickWorkoutTimers(){
-      const timer=activeExerciseTimer,routine=workoutPlans.find(item=>item.id===timer?.routineId);if(timer&&routine){const timerDate=new Date(`${timer.date}T12:00:00`),exercise=allRoutineExercises(routine).find(item=>item.id===timer.exerciseId),session=getWorkoutSession(routine,timerDate),record=session.exerciseSets[timer.exerciseId]?.[timer.setIndex];if(!exercise||!record||record.done)activeExerciseTimer=null;else if(Date.now()>=timer.endsAt){
-          if(exercise.kind==='timer'){record.done=true;activeExerciseTimer=null;persistWorkouts();if(activeRoutineId===routine.id)renderWorkoutMode();}
-          else if(timer.phase==='work'){timer.round++;if(timer.round>=Number(exercise.reps||1)){record.done=true;activeExerciseTimer=null;if(exercise.setRest&&timer.setIndex<session.exerciseSets[exercise.id].length-1)startRestTimer(exercise.setRest);persistWorkouts();if(activeRoutineId===routine.id)renderWorkoutMode();}else if(exercise.rest){timer.phase='rest';timer.endsAt=Date.now()+exercise.rest*1000;}else{timer.endsAt=Date.now()+exercise.work*1000;}}
+      const timer=activeExerciseTimer,routine=workoutPlans.find(item=>item.id===timer?.routineId);if(timer&&routine){const timerDate=new Date(`${timer.date}T12:00:00`),exercise=allRoutineExercises(routine).find(item=>item.id===timer.exerciseId),session=getWorkoutSession(routine,timerDate),record=session.exerciseSets[timer.exerciseId]?.[timer.setIndex];if(!exercise||!record||record.done&&timer.phase!=='set-rest')activeExerciseTimer=null;else if(!timer.paused&&Date.now()>=timer.endsAt){
+          if(timer.phase==='set-rest'){const nextIndex=nextTimerSet(exercise,session,timer.setIndex);if(nextIndex>=0)startTimedSet(timer,exercise,session,nextIndex);else activeExerciseTimer=null;}
+          else if(exercise.kind==='timer')finishTimedSet(timer,routine,exercise,session,record);
+          else if(timer.phase==='work'){timer.round++;if(timer.round>=Number(exercise.reps||1))finishTimedSet(timer,routine,exercise,session,record);else if(exercise.rest){timer.phase='rest';timer.endsAt=Date.now()+exercise.rest*1000;}else{timer.endsAt=Date.now()+exercise.work*1000;}}
           else{timer.phase='work';timer.endsAt=Date.now()+exercise.work*1000;}
         }
-        if(activeExerciseTimer){const remaining=(timer.endsAt-Date.now())/1000,phase=timer.phase==='rest'?'Rest':'Hang',label=exercise.kind==='timer'?formatClock(remaining):timer.phase==='rest'?`Rest · ${formatClock(remaining)}`:formatClock(remaining),selector=`${CSS.escape(timer.exerciseId)}:${timer.setIndex}`,readout=activeRoutineId===routine.id&&timer.date===dateKey(selectedWorkoutDate)?document.querySelector(`[data-timer-readout="${selector}"]`):null,repCounter=activeRoutineId===routine.id&&timer.date===dateKey(selectedWorkoutDate)?document.querySelector(`[data-rep-counter="${selector}"]`):null;if(readout){readout.textContent=label;readout.setAttribute('aria-label',`${phase}, ${formatClock(remaining)} remaining`);}if(repCounter){const progress=timer.phase==='rest'?timer.round:Math.min(timer.round+1,Number(exercise.reps)||1);repCounter.textContent=`${progress}/${exercise.reps}`;}}
+        if(activeExerciseTimer){const remaining=(timer.paused?timer.pausedRemainingMs:timer.endsAt-Date.now())/1000,isRestPhase=['rest','set-rest'].includes(timer.phase),phase=isRestPhase?'Rest':'Hang',label=isRestPhase?`Rest · ${formatClock(remaining)}`:formatClock(remaining),selector=`${CSS.escape(timer.exerciseId)}:${timer.setIndex}`,readout=activeRoutineId===routine.id&&timer.date===dateKey(selectedWorkoutDate)?document.querySelector(`[data-timer-readout="${selector}"]`):null,repCounter=activeRoutineId===routine.id&&timer.date===dateKey(selectedWorkoutDate)?document.querySelector(`[data-rep-counter="${selector}"]`):null;if(readout){readout.textContent=label;readout.setAttribute('aria-label',`${phase}, ${formatClock(remaining)} remaining`);}if(repCounter){const progress=isRestPhase?timer.round:Math.min(timer.round+1,Number(exercise.reps)||1);repCounter.textContent=`${progress}/${exercise.reps}`;}}
       }
       renderActiveTimerFab();
-      const restRemaining=(restTimerEndsAt-Date.now())/1000;if(restTimerEndsAt&&restRemaining<=0)restTimerEndsAt=0;const restRunning=Boolean(restTimerEndsAt);$('#restTimerLabel').textContent=restRunning?formatClock(restRemaining):'rest';$('#restTimerFab').setAttribute('aria-label',restRunning?`Cancel 2 minute rest timer, ${formatClock(restRemaining)} remaining`:'Start 2 minute rest timer');$('#restTimerFab').classList.toggle('timer-running',restRunning);
-      if(!activeExerciseTimer&&!restTimerEndsAt&&workoutTimerInterval){clearInterval(workoutTimerInterval);workoutTimerInterval=null;}
+      if(!activeExerciseTimer&&workoutTimerInterval){clearInterval(workoutTimerInterval);workoutTimerInterval=null;}
     }
-    function startRestTimer(seconds=120){restTimerEndsAt=Date.now()+seconds*1000;if(!workoutTimerInterval)workoutTimerInterval=setInterval(tickWorkoutTimers,250);tickWorkoutTimers();}
     function changeEntry(id,key){const h=habits.find(x=>x.id===id);if(!h)return;h.entries||={};const goal=h.type==='times'?h.target:1;let n=getCount(h,key);n=n>=goal?0:n+1;if(n)h.entries[key]=n;else delete h.entries[key];persist();render();}
     function setTheme(theme){document.documentElement.dataset.theme=theme;localStorage.setItem(THEME_KEY,theme);$('#themeToggle').innerHTML=theme==='dark'?'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.2 15.5A8.5 8.5 0 0 1 8.5 3.8 8.6 8.6 0 1 0 20.2 15.5Z"/></svg>';$('#themeToggle').setAttribute('aria-label',theme==='dark'?'Switch to light mode':'Switch to dark mode');document.querySelector('meta[name="theme-color"]').content=theme==='dark'?'#282a29':'#f8f7f2';}
     function openNew(){editingId=null;$('#dialogTitle').textContent='Add a habit';$('#habitForm').reset();$('#targetRow').hidden=true;$('#deleteHabit').hidden=true;$('#habitDialog').showModal();$('#habitName').focus();}
@@ -335,8 +356,9 @@ const KEY = 'otto-habits-v1';
     $('#routineList').addEventListener('contextmenu',e=>{const title=e.target.closest('[data-rename-routine]');if(title){e.preventDefault();openRoutineRename(title.dataset.renameRoutine);}});
     $('#leaveWorkout').addEventListener('click',()=>{activeRoutineId=null;$('#workoutMode').hidden=true;$('#workoutBrowse').hidden=false;renderWorkouts();});
     $('#finishWorkout').addEventListener('click',()=>{const routine=workoutPlans.find(item=>item.id===activeRoutineId);if(!routine)return;const session=getWorkoutSession(routine);session.finishedAt=new Date().toISOString();setWorkoutCompletion(routine.id,true,selectedWorkoutDate);activeRoutineId=null;$('#workoutMode').hidden=true;$('#workoutBrowse').hidden=false;renderWorkouts();});
-    $('#restTimerFab').addEventListener('click',()=>{if(restTimerEndsAt){restTimerEndsAt=0;tickWorkoutTimers();}else startRestTimer(120);});
     $('#activeTimerFab').addEventListener('click',focusRunningSet);
+    $('#activeTimerPause').addEventListener('click',toggleExerciseTimerPause);
+    $('#activeTimerClose').addEventListener('click',discardCurrentTimedExercise);
     $('#exerciseList').addEventListener('input',e=>{const input=e.target.closest('[data-set-field]');if(!input)return;const routine=workoutPlans.find(item=>item.id===activeRoutineId);if(!routine)return;const session=getWorkoutSession(routine),record=session.exerciseSets[input.dataset.exercise]?.[Number(input.dataset.setIndex)];if(!record)return;record[input.dataset.setField]=input.value;persistWorkouts();});
     $('#workoutMode').addEventListener('contextmenu',e=>{const routineTitle=e.target.closest('[data-rename-routine]');if(routineTitle){e.preventDefault();openRoutineRename(routineTitle.dataset.renameRoutine);return;}const exerciseTitle=e.target.closest('[data-rename-exercise]');if(exerciseTitle){e.preventDefault();openExerciseRename(exerciseTitle.dataset.renameExercise);return;}const row=e.target.closest('[data-set-row]');if(row)showSetContextMenu(e,row);});
     function clearRenamePress(){if(renamePressTimer)clearTimeout(renamePressTimer);renamePressTimer=0;renamePress=null;}
@@ -359,6 +381,7 @@ const KEY = 'otto-habits-v1';
     document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('#setContextMenu').hidden){closeSetContextMenu();}});
     $('#deleteSetFromMenu').addEventListener('click',()=>{if(setContextTarget)deleteWorkoutSet(setContextTarget.exerciseId,setContextTarget.setIndex);});
     $('#exerciseList').addEventListener('click',e=>{
+      const exerciseTimer=e.target.closest('[data-start-exercise-timer]');if(exerciseTimer){const routine=workoutPlans.find(item=>item.id===activeRoutineId),exercise=routine&&allRoutineExercises(routine).find(item=>item.id===exerciseTimer.dataset.startExerciseTimer),records=exercise&&getWorkoutSession(routine).exerciseSets[exercise.id];if(!exercise||!records)return;const isCurrentTimer=activeExerciseTimer?.routineId===routine.id&&activeExerciseTimer.date===dateKey(selectedWorkoutDate)&&activeExerciseTimer.exerciseId===exercise.id,setIndex=isCurrentTimer?activeExerciseTimer.setIndex:records.findIndex(record=>!record.done);if(setIndex<0)return;if(isCurrentTimer)records[setIndex].done=false;startExerciseTimer(exercise.id,setIndex);return;}
       const deleteAction=e.target.closest('[data-delete-set]');if(deleteAction){deleteWorkoutSet(deleteAction.dataset.deleteSet,Number(deleteAction.dataset.setIndex));return;}
       const check=e.target.closest('[data-set-done]');if(check){setComplete(check.dataset.setDone,Number(check.dataset.setIndex));return;}
       const timer=e.target.closest('[data-start-timer]');if(timer){startExerciseTimer(timer.dataset.startTimer,Number(timer.dataset.setIndex));return;}
@@ -446,7 +469,7 @@ const KEY = 'otto-habits-v1';
     function startParticleScene(){stopParticleScene();const scores=updateConsistencyHero();resizeParticleCanvas();seedParticles(scores);lastParticleTime=0;paintParticles(performance.now(),!reduceMotion.matches);}
     function stopParticleScene(){if(particleFrame)cancelAnimationFrame(particleFrame);particleFrame=0;}
     window.addEventListener('resize',()=>{if(document.body.classList.contains('home-active'))startParticleScene();else resizeParticleCanvas();});
-    function showView(view){const home=view==='home',workouts=view==='workouts',index=['habits','home','workouts'].indexOf(view);document.body.classList.toggle('home-active',home);document.body.classList.toggle('workouts-active',workouts);$('#homePage').hidden=!home;$('#workoutsPage').hidden=!workouts;$('#restTimerFab').hidden=!workouts;if(workouts)renderWorkouts();const toolbar=$('#bottomToolbar');toolbar.dataset.active=view;toolbar.style.setProperty('--tab-index',String(Math.max(0,index)));tabs.forEach((tab,i)=>{const selected=i===index;tab.setAttribute('aria-selected',String(selected));tab.tabIndex=selected?0:-1;});if(home)startParticleScene();else stopParticleScene();}
+    function showView(view){const home=view==='home',workouts=view==='workouts',index=['habits','home','workouts'].indexOf(view);document.body.classList.toggle('home-active',home);document.body.classList.toggle('workouts-active',workouts);$('#homePage').hidden=!home;$('#workoutsPage').hidden=!workouts;if(workouts)renderWorkouts();renderActiveTimerFab();const toolbar=$('#bottomToolbar');toolbar.dataset.active=view;toolbar.style.setProperty('--tab-index',String(Math.max(0,index)));tabs.forEach((tab,i)=>{const selected=i===index;tab.setAttribute('aria-selected',String(selected));tab.tabIndex=selected?0:-1;});if(home)startParticleScene();else stopParticleScene();}
     tabs.forEach((tab,index)=>tab.addEventListener('click',()=>showView(['habits','home','workouts'][index])));
     $('#bottomToolbar').addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight'].includes(e.key))return;e.preventDefault();const current=tabs.findIndex(tab=>tab.getAttribute('aria-selected')==='true'),next=(current+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length;tabs[next].focus();showView(['habits','home','workouts'][next]);});
     showView('habits');

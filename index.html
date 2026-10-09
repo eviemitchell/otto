@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
   <meta name="theme-color" content="#f8f7f2">
   <title>Otto — habit tracker</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400..700&display=swap');
     :root {
       color-scheme: light;
+      --page-top-inset: 32px;
       --bg: #f8f7f2;
       --paper: rgba(255,255,255,.78);
       --paper-solid: #fffefa;
@@ -18,6 +19,8 @@
       --green: #586f56;
       --green-strong: #405a43;
       --green-soft: #e8eee4;
+      --timer-work-color: #398a42;
+      --timer-rest-color: #4f9db8;
       --gold: #d9b976;
       --shadow: 0 14px 40px rgba(58, 62, 46, .055);
       --serif: 'Atkinson Hyperlegible', sans-serif;
@@ -34,6 +37,8 @@
       --green: #b4c39d;
       --green-strong: #d5e0c5;
       --green-soft: #41404b;
+      --timer-work-color: #9bd879;
+      --timer-rest-color: #8abbd0;
       --gold: #c9bd9b;
       --shadow: 0 14px 40px rgba(0,0,0,.14);
     }
@@ -50,7 +55,7 @@
     }
     button, input { font: inherit; }
     button { color: inherit; }
-    .shell { position: relative; width: min(100% - 36px, 1020px); margin: 0 auto; padding: 27px 0 64px; }
+    .shell { position: relative; width: min(100% - 36px, 1020px); margin: 0 auto; padding: var(--page-top-inset) 0 64px; }
     header { display:flex; align-items:center; justify-content:space-between; margin-bottom: 28px; }
     .brand { display:flex; align-items:center; gap: 11px; font-weight:700; letter-spacing:-.04em; font-size:21px; }
     .brand-mark { width:34px; height:34px; display:grid; place-items:center; border-radius:50%; background:var(--green-soft); color:var(--green-strong); }
@@ -146,7 +151,7 @@
     .save-btn { flex:1; background:var(--green-strong); color:var(--paper-solid); }
     .delete-btn { padding:0 16px; background:var(--bg); color:#bc6962; border:0; }
     @media (max-width:560px) {
-      .shell { width:calc(100% - 28px); padding-top:17px; }
+      .shell { width:calc(100% - 28px); padding-top:var(--page-top-inset); }
       header { margin-bottom:24px; }
       .intro { display:block; margin-bottom:25px; }
       .date-note { margin-top:14px; }
@@ -230,6 +235,7 @@
     .shell { padding-bottom:128px; }
     body.home-active .shell { display:none; }
     .home-page { min-height:100vh; }
+    .home-app-header { position:absolute; z-index:2; top:var(--page-top-inset); left:50%; width:min(calc(100% - 36px),1020px); margin:0; transform:translateX(-50%); }
     .bottom-toolbar { --tab-index:0; --tab-glow:#aa8dbb; position:fixed; z-index:20; left:50%; bottom:calc(13px + env(safe-area-inset-bottom)); transform:translateX(-50%); width:min(218px,calc(100% - 32px)); padding:7px; border:1px solid color-mix(in srgb,var(--line) 72%,transparent); border-radius:26px; background:color-mix(in srgb,var(--paper-solid) 90%,transparent); box-shadow:0 12px 38px rgba(0,0,0,.25); backdrop-filter:blur(22px); }
     .bottom-toolbar[data-active="home"] { --tab-glow:#8599bd; }
     .bottom-toolbar[data-active="workouts"] { --tab-glow:#c7a9d8; }
@@ -243,6 +249,7 @@
     @media (prefers-reduced-motion:reduce) { .nav-glow,.nav-tab { transition:none; } }
     body.workouts-active .shell { display:none; }
     .home-page { position:fixed; z-index:1; inset:0; width:100%; min-height:100vh; overflow:hidden; background:var(--bg); }
+    .home-page[hidden] { display:none; }
     .particle-field { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
     .home-hero-wrap { position:relative; z-index:1; display:grid; min-height:100vh; place-items:center; padding:24px 18px calc(108px + env(safe-area-inset-bottom)); }
     .consistency-orb { display:grid; width:min(82vw,430px); aspect-ratio:1; place-items:center; padding:34px; border-radius:48%; background:var(--paper); box-shadow:var(--shadow); text-align:center; }
@@ -251,14 +258,20 @@
     .consistency-headline { margin:0; font:600 clamp(36px,9vw,62px)/1.05 var(--serif); letter-spacing:.015em; }
     .consistency-unit { font-weight:400; }
     .consistency-dates { margin:12px 0 0; color:var(--muted); font-size:14px; }
-    .workouts-page { position:fixed; z-index:1; inset:0; height:100vh; height:100dvh; overflow:auto; padding:24px 18px calc(125px + env(safe-area-inset-bottom)); background:var(--bg); }
-    .workout-content { width:min(100%,760px); margin:0 auto; padding-top:14px; }
+    .workouts-page { position:fixed; z-index:1; inset:0; height:100vh; height:100dvh; overflow:auto; padding:0 18px calc(125px + env(safe-area-inset-bottom)); background:var(--bg); }
+    .workout-content { width:min(100%,760px); margin:0 auto; padding-top:var(--page-top-inset); }
+    .workout-mode { padding-top:0; }
     .workout-heading,.workout-mode-heading { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:22px; }
-    .workout-heading h1,.workout-mode h1 { margin:0; font:600 clamp(32px,6vw,44px)/1.1 var(--serif); letter-spacing:-.035em; }
+    .workout-mode-heading { position:sticky; top:0; z-index:15; display:grid; grid-template-columns:40px minmax(0,1fr) auto; grid-template-rows:48px auto; gap:0 12px; align-items:center; margin:0 0 17px; padding:var(--page-top-inset) 0; background:color-mix(in srgb,var(--bg) 88%,transparent); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); }
+    .workout-mode-heading #leaveWorkout { grid-column:1; grid-row:1; justify-self:start; }
+    .workout-mode-heading #finishWorkout { grid-column:3; grid-row:1; justify-self:end; }
+    .workout-mode-heading #activeWorkoutTitle { grid-column:1 / -1; grid-row:2; min-width:0; }
+    .workout-heading h1 { margin:0; font:600 clamp(32px,6vw,44px)/1.1 var(--serif); letter-spacing:-.035em; }
+    .workout-mode h1 { margin:0; font:600 clamp(32px,6vw,44px)/1.1 var(--serif); letter-spacing:-.035em; }
     .workout-week-controls { display:flex; gap:7px; }
     .workout-calendar-card { margin-bottom:25px; padding:17px 18px 15px; border-radius:20px; background:var(--paper); }
     .workout-calendar-header { display:flex; align-items:center; justify-content:flex-start; margin-bottom:12px; }
-    .workout-calendar-header h2 { margin:0; font:500 18px var(--serif); }
+    .workout-calendar-header h2 { margin:0; font:400 15px var(--serif); }
     .workout-calendar { display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:3px; }
     .workout-day { display:flex; min-height:68px; flex-direction:column; align-items:center; justify-content:center; gap:4px; border:1px solid transparent; border-radius:12px; padding:5px 2px; background:transparent; color:var(--muted); cursor:pointer; }
     .workout-day:hover,.workout-day[aria-pressed="true"] { background:var(--green-soft); color:var(--ink); }
@@ -285,9 +298,6 @@
     .workout-quick svg { width:22px; height:22px; }
     .workout-quick[aria-pressed="true"] { color:var(--green-strong); }
     .workout-quick[aria-pressed="true"] svg { padding:3px; border-radius:50%; background:var(--green-soft); }
-    .workout-mode-heading { margin-bottom:17px; }
-    .back-btn { display:grid; width:42px; height:42px; place-items:center; border:0; border-radius:50%; padding:0; background:transparent; color:var(--muted); font-size:30px; font-weight:400; line-height:1; cursor:pointer; }
-    .back-btn:hover { background:color-mix(in srgb,var(--paper) 75%,transparent); color:var(--ink); }
     .finish-workout { display:flex; min-height:48px; align-items:center; justify-content:center; gap:9px; border:0; border-radius:999px; padding:0 19px; background:color-mix(in srgb,#c7a9d8 23%,var(--paper-solid)); color:var(--ink); box-shadow:0 0 22px color-mix(in srgb,#c7a9d8 30%,transparent),inset 0 0 14px color-mix(in srgb,#c7a9d8 16%,transparent); font-size:14px; font-weight:700; text-transform:lowercase; cursor:pointer; }
     .workout-kicker { margin:0 0 5px; color:var(--muted); font-size:11px; }
     .workout-mode-summary { display:none; }
@@ -295,6 +305,11 @@
     .exercise-card { position:relative; padding:16px 15px 14px; border-radius:17px; background:var(--paper); box-shadow:var(--shadow); }
     .exercise-top { display:flex; align-items:flex-start; gap:12px; margin-bottom:15px; }
     .exercise-top h2 { margin:0; font:500 18px var(--serif); }
+    .exercise-top>div:first-child { min-width:0; flex:1; }
+    .exercise-timer-start { flex:0 0 auto; min-width:56px; min-height:36px; border:0; border-radius:10px; padding:0 12px; background:var(--green-soft); color:var(--green-strong); font-size:12px; font-weight:600; cursor:pointer; }
+    .exercise-timer-start:disabled { opacity:.5; cursor:default; }
+    .exercise-timer-start.is-running { display:grid; width:38px; min-width:38px; height:38px; place-items:center; padding:8px; line-height:0; }
+    .exercise-timer-start svg { display:block; width:19px; height:19px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
     .exercise-title { touch-action:manipulation; -webkit-user-select:none; user-select:none; }
     .exercise-detail { margin:5px 0 0; color:var(--muted); font-size:11px; line-height:1.45; }
     .exercise-progress { display:none; }
@@ -326,19 +341,29 @@
     .set-context-menu { position:fixed; z-index:50; border:1px solid var(--line); border-radius:10px; padding:4px; background:var(--paper-solid); box-shadow:0 8px 26px rgba(0,0,0,.2); }
     .set-context-menu button { min-height:36px; border:0; border-radius:7px; padding:0 12px; background:transparent; color:#bc6962; cursor:pointer; }
     .set-context-menu button:hover { background:var(--bg); }
-    .rest-timer-fab { position:fixed; z-index:18; right:18px; bottom:calc(96px + env(safe-area-inset-bottom)); min-width:68px; min-height:50px; border:0; border-radius:999px; padding:0 18px; background:color-mix(in srgb,var(--paper-solid) 88%,transparent); color:var(--ink); box-shadow:0 7px 25px rgba(0,0,0,.17); font-size:14px; font-weight:700; font-variant-numeric:tabular-nums; text-transform:lowercase; cursor:pointer; transition:background .25s,box-shadow .25s,transform .25s; }
-    .rest-timer-fab.timer-running { background:color-mix(in srgb,#c7a9d8 23%,var(--paper-solid)); box-shadow:0 0 22px color-mix(in srgb,#c7a9d8 32%,transparent),inset 0 0 14px color-mix(in srgb,#c7a9d8 16%,transparent); animation:rest-pulse 1.7s ease-in-out infinite; }
-    .active-timer-fab { position:fixed; z-index:18; right:18px; bottom:calc(18px + env(safe-area-inset-bottom)); min-width:68px; min-height:50px; border:1px solid color-mix(in srgb,#c7a9d8 36%,var(--line)); border-radius:999px; padding:0 13px; background:color-mix(in srgb,#c7a9d8 19%,var(--paper-solid)); color:var(--ink); box-shadow:0 0 22px color-mix(in srgb,#c7a9d8 28%,transparent),inset 0 0 14px color-mix(in srgb,#c7a9d8 13%,transparent); font-size:14px; font-weight:700; font-variant-numeric:tabular-nums; cursor:pointer; }
-    @keyframes rest-pulse { 0%,100% { transform:scale(1); } 50% { transform:scale(1.045); } }
-    @media (prefers-reduced-motion:reduce) { .rest-timer-fab.timer-running { animation:none; } }
+    .active-timer-widget { position:fixed; z-index:19; left:50%; bottom:calc(100px + env(safe-area-inset-bottom)); transform:translateX(-50%); display:block; width:min(270px,calc(100% - 40px)); min-height:102px; border:1px solid color-mix(in srgb,var(--timer-color) 34%,var(--line)); border-radius:24px; padding:10px 14px; background:color-mix(in srgb,var(--timer-color) 12%,var(--paper-solid)); color:var(--timer-color); box-shadow:0 0 24px color-mix(in srgb,var(--timer-color) 24%,transparent),inset 0 0 14px color-mix(in srgb,var(--timer-color) 10%,transparent); }
+    .active-timer-widget[hidden] { display:none; }
+    .active-timer-widget.timer-phase-work { --timer-color:var(--timer-work-color); }
+    .active-timer-widget.timer-phase-rest { --timer-color:var(--timer-rest-color); }
+    .active-timer-widget.timer-phase-paused { --timer-color:var(--muted); border-color:var(--line); background:var(--paper-solid); box-shadow:0 8px 28px rgba(0,0,0,.18); }
+    .active-timer-fab { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px; width:100%; min-width:0; min-height:76px; border:0; padding:0; background:transparent; color:inherit; cursor:pointer; }
+    .active-timer-fab .timer-value { font-size:48px; line-height:1; font-weight:500; font-variant-numeric:tabular-nums; letter-spacing:.01em; }
+    .active-timer-fab .timer-phase { font-size:14px; line-height:1.15; font-weight:500; }
+    .timer-pause-btn { position:absolute; top:50%; right:18px; transform:translateY(-50%); display:grid; width:34px; height:34px; place-items:center; border:0; border-radius:50%; padding:7px; background:color-mix(in srgb,var(--timer-color) 14%,transparent); color:var(--timer-color); cursor:pointer; }
+    .timer-close-btn { position:absolute; top:50%; left:18px; transform:translateY(-50%); display:grid; width:32px; height:32px; place-items:center; border:0; border-radius:50%; padding:7px; background:color-mix(in srgb,var(--muted) 12%,transparent); color:var(--muted); cursor:pointer; }
+    .timer-close-btn[hidden] { display:none; }
+    .timer-close-btn svg { display:block; width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; }
+    .timer-pause-btn svg { display:block; width:18px; height:18px; fill:currentColor; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+    .timer-pause-btn:focus-visible,.active-timer-fab:focus-visible { outline:2px solid currentColor; outline-offset:3px; }
     .backup-btn { border:0; border-radius:14px; padding:0 14px; min-height:40px; background:var(--green-soft); color:var(--green-strong); cursor:pointer; font-size:12px; font-weight:600; }
     .backup-copy { color:var(--muted); font-size:13px; line-height:1.55; }
     .backup-actions { display:flex; gap:10px; margin-top:20px; }
     .backup-actions button { min-height:44px; flex:1; border:0; border-radius:13px; background:var(--green-soft); color:var(--green-strong); font-weight:600; cursor:pointer; }
     .backup-actions button:first-child { background:var(--green-strong); color:var(--paper-solid); }
     @media(max-width:560px) {
-      .workouts-page { padding:16px 14px calc(122px + env(safe-area-inset-bottom)); }
-      .workout-content { padding-top:8px; }
+      .workouts-page { padding:0 14px calc(122px + env(safe-area-inset-bottom)); }
+      .workout-content { padding-top:var(--page-top-inset); }
+      .workout-mode { padding-top:0; }
       .workout-calendar-card { padding:13px 10px 11px; }
       .workout-day { min-height:61px; }
       .workout-card { min-height:76px; }
@@ -361,10 +386,6 @@
 </head>
 <body>
   <div class="shell">
-    <header>
-      <div class="brand"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20c0-5.5 1.6-9.5 6-13"/><path d="M12 15c-4.8 0-7.6-2.1-8-6.5 4.8-.1 7.6 2.1 8 6.5Z"/><path d="M12.5 11c.4-4.3 3-6.8 7.5-7-.2 4.4-2.7 6.9-7.5 7Z"/></svg></span>otto</div>
-      <div class="header-right"><button class="backup-btn" id="openBackup" type="button">Backup</button><button class="theme-btn" id="themeToggle" aria-label="Switch color theme"></button></div>
-    </header>
     <main id="habitsPage" role="tabpanel" aria-label="Habits">
       <section class="week-card" aria-label="Weekly habit check-ins">
         <div class="week-top"><button class="week-nav" id="prevWeek" type="button" aria-label="Previous week">‹</button><div class="week-range" id="weekRange"></div><button class="week-nav" id="nextWeek" type="button" aria-label="Next week">›</button></div>
@@ -401,26 +422,32 @@
   </dialog>
   <main class="home-page" id="homePage" role="tabpanel" aria-label="Home" tabindex="-1" hidden>
     <canvas class="particle-field" id="particleField" aria-hidden="true"></canvas>
+    <header class="home-app-header">
+      <div class="brand"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20c0-5.5 1.6-9.5 6-13"/><path d="M12 15c-4.8 0-7.6-2.1-8-6.5 4.8-.1 7.6 2.1 8 6.5Z"/><path d="M12.5 11c.4-4.3 3-6.8 7.5-7-.2 4.4-2.7 6.9-7.5 7Z"/></svg></span>otto</div>
+      <div class="header-right"><button class="backup-btn" id="openBackup" type="button">Backup</button><button class="theme-btn" id="themeToggle" aria-label="Switch color theme"></button></div>
+    </header>
     <div class="home-hero-wrap"><section class="consistency-orb" id="consistencyOrb" aria-label="Completed habit tasks in the last 7 days"><div class="consistency-copy" aria-live="polite"><p class="consistency-kicker">Your last 7 days</p><h1 class="consistency-headline" id="consistencyHeadline"><span id="consistencyCount">0/0</span> <span class="consistency-unit">habits</span></h1><p class="consistency-dates" id="consistencyDates"></p></div></section></div>
   </main>
   <main class="workouts-page" id="workoutsPage" role="tabpanel" aria-label="Workouts" tabindex="-1" hidden>
     <section id="workoutBrowse" class="workout-content">
-      <header class="workout-heading"><div><p class="eyebrow">Training log</p><h1>Workouts</h1></div><div class="workout-week-controls"><button class="week-nav" id="workoutPrevWeek" type="button" aria-label="Previous week">‹</button><button class="week-nav" id="workoutNextWeek" type="button" aria-label="Next week">›</button></div></header>
+      <header class="workout-heading"><div><h1>training log</h1></div><div class="workout-week-controls"><button class="week-nav" id="workoutPrevWeek" type="button" aria-label="Previous week">‹</button><button class="week-nav" id="workoutNextWeek" type="button" aria-label="Next week">›</button></div></header>
       <section class="workout-calendar-card">
         <div class="workout-calendar-header"><h2 id="workoutWeekLabel">This week</h2></div>
         <div class="workout-calendar" id="workoutCalendar" aria-label="Workout week dates"></div>
       </section>
-      <section class="routine-section"><div class="section-head"><h2>Workout routines</h2><span class="eyebrow">5 weekly · 1 daily</span></div><div class="routine-list" id="routineList" aria-label="Workout routines"></div></section>
+      <section class="routine-section"><div class="section-head"><h2>workouts</h2><span class="eyebrow">5 weekly · 1 daily</span></div><div class="routine-list" id="routineList" aria-label="Workout routines"></div></section>
     </section>
     <section id="workoutMode" class="workout-content workout-mode" hidden>
-      <header class="workout-mode-heading"><button class="back-btn" id="leaveWorkout" type="button" aria-label="Back to workouts">‹</button><button class="finish-workout" id="finishWorkout" type="button"><span>complete</span></button></header>
-      <h1 id="activeWorkoutTitle"></h1>
+      <header class="workout-mode-heading"><button class="week-nav" id="leaveWorkout" type="button" aria-label="Back to workouts">‹</button><h1 id="activeWorkoutTitle"></h1><button class="finish-workout" id="finishWorkout" type="button"><span>complete</span></button></header>
       <div class="exercise-list" id="exerciseList" aria-label="Exercises"></div>
       <button class="add-exercise-btn" id="addExercise" type="button">＋ &nbsp; Add exercise</button>
     </section>
   </main>
-  <button class="rest-timer-fab" id="restTimerFab" type="button" aria-label="Start 2 minute rest timer" hidden><span id="restTimerLabel">rest</span></button>
-  <button class="active-timer-fab" id="activeTimerFab" type="button" aria-label="Return to running exercise timer" hidden><span id="activeTimerFabLabel">0:00</span></button>
+  <div class="active-timer-widget timer-phase-work" id="activeTimerWidget" hidden>
+    <button class="active-timer-fab" id="activeTimerFab" type="button" aria-label="Return to running exercise timer"><span class="timer-value" id="activeTimerFabLabel">0:00</span><span class="timer-phase" id="activeTimerFabPhase">rep 1/1</span></button>
+    <button class="timer-close-btn" id="activeTimerClose" type="button" aria-label="Discard current exercise progress and close timer" title="Discard exercise progress" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+    <button class="timer-pause-btn" id="activeTimerPause" type="button" aria-label="Pause timer" title="Pause timer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg></button>
+  </div>
   <div class="set-context-menu" id="setContextMenu" role="menu" hidden><button id="deleteSetFromMenu" type="button" role="menuitem">Delete set</button></div>
   <nav class="bottom-toolbar" id="bottomToolbar" data-active="habits" aria-label="Otto navigation">
     <div class="nav-tabs" role="tablist" aria-label="App sections">
